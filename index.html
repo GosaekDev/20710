@@ -47,13 +47,16 @@
 
                 // append elements to the DOM
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
-                document.getElementById("label-container").innerHTML == "알 수 없음.";
+                labelContainer = document.getElementById("label-container");
+                for (let i = 0; i < maxPredictions; i++) { // and class labels
+                    labelContainer.appendChild(document.createElement("div"));
+                }
             } else if (document.getElementById("btn").innerHTML == "Stop") {
                 document.getElementById("btn").innerHTML = "Start"
                 
                 await webcam.stop()
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
-                document.getElementById("label-container").innerHTML == "";
+                document.getElementById("label-container").childNodes[0].innerHTML == "";
             }
             
         }
