@@ -53,7 +53,8 @@
                 }
             } else if (document.getElementById("btn").innerHTML == "Stop") {
                 document.getElementById("btn").innerHTML = "Start"
-
+                
+                await webcam.stop()
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
                 document.getElementById("label-container").getElementsByTagName("div").innerHTML == "";
             }
