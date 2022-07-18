@@ -26,7 +26,7 @@
 
         // Load the image model and setup the webcam
         async function init() {
-            if (document.getElementById("btn") == "Start") {
+            if (document.getElementById("btn").innerHTML == "Start") {
                 document.getElementById("btn").innerHTML = "Stop"
                 const modelURL = URL + "model.json";
                 const metadataURL = URL + "metadata.json";
@@ -51,7 +51,7 @@
                 for (let i = 0; i < maxPredictions; i++) { // and class labels
                     labelContainer.appendChild(document.createElement("div"));
                 }
-            } else if (document.getElementById("btn") == "Stop") {
+            } else if (document.getElementById("btn").innerHTML == "Stop") {
                 document.getElementById("btn").innerHTML = "Start"
 
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
