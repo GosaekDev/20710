@@ -62,7 +62,7 @@
             const prediction = await model.predict(webcam.canvas);
 
             const classPrediction = prediction[0].probability.toFixed(2);
-            const classDescribe = "";
+            var classDescribe = "";
 
             if (classPrediction >= 0.9) {
                 if (prediction[0].className == "미어캣") {
