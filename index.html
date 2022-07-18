@@ -54,6 +54,8 @@
                     labelContainer.appendChild(document.createElement("div"));
                 }
             } else if (document.getElementById("btn") == "Stop") {
+                document.getElementById("btn").innerHTML = "Start"
+
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
                 document.getElementById("label-container").getElementsByTagName("div").innerHTML == "";
             }
