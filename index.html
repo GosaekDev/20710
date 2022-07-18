@@ -63,24 +63,24 @@
             // const prediction = await model.predict(webcam.canvas);
             // for (let i = 0; i < maxPredictions; i++) {}
 
-            const classPrediction = prediction[i].probability.toFixed(2);
+            const classPrediction = prediction[0].probability.toFixed(2);
             const classDescribe = "";
 
             if (classPrediction >= 0.9) {
-                if (prediction[i].className == "미어캣") {
+                if (prediction[0].className == "미어캣") {
                     classDescribe = "미어캣은 크기가 약 50cm이며 흙이 굳고 돌이 많은 건조지에 서식한다.\n주로 앙골라 남서부에서 남아프키라 지역에 분포되어있고,\n앞발에는 구부러진 강한 발톱이 있어서 굴을 파기에 알맞고, 뒷다리는 짤막하다. 머리는 둥글넓적하고, 코는 뾰족하다. 털은 은빛이 도는 갈색이고 등에 짙은 줄무늬가 있다."
-                } else if (prediction[i].className == "뱅골여우") {
+                } else if (prediction[0].className == "뱅골여우") {
                     classDescribe = "뱅골여우는 머리~몸통 길이는 약 45cm~60cm이며 탁 트인 초원에 서식한다.\n주로 북쪽 히말라야의 남쪽, 남쪽 인도 반도 끝에 분포되어있고,\n털이 짧고, 등쪽은 모래색 내지 붉은 갈색이며 배쪽은 좀 더 밝은색, 꼬리 끝은 검다."
-                } else if (prediction[i].className == "아무르고슴도치") {
+                } else if (prediction[0].className == "아무르고슴도치") {
                     classDescribe = "아무르고슴도치는 크기가 약 20cm이며 평야지대의 삼림에 서식한다.\n주로 활엽수림과 혼효림에 분포되어있고,\n체모가 변형되어서 생긴 가시가 몸에 돋혀 있다. 귓바퀴가 짧고 주둥이가 돼지처럼 뾰족하며 발톱이 잘 발달했다."
-                } else if (prediction[i].className == "알파카") {
+                } else if (prediction[0].className == "알파카") {
                     classDescribe = "알파카는 몸길이 1.3m 어깨높이 1.2m이며 고산지대에 서식한다.\n주로 해발 4000~5000 안데스 산맥에 분포되어있고,\n혈액의 산소 운반 효율이 좋아, 산소가 부족한 고산지대에서 살기에 적합하다. 어린 알파카는 식용하며 털은 양털보다 가늘고 곧아 따뜻하고 부드러운 직물을 만드는 데 유용하다."
-                } else if (prediction[i].className == "혹등고래") {
+                } else if (prediction[0].className == "혹등고래") {
                     classDescribe = "혹등고래는 약 12m~14m이며 바닷속에 서식한다.\n전 세계의 대양에 분포되어있고,\n뭉툭하게 생긴 몸체를 지니고 있고 입 근처의 머리와 아래턱에 많은 혹이 나있다. 꼬리가 크고 지느러미발이 무척 길다."
                 }
 
             }
-            labelContainer.childNodes[i].innerHTML = classDescribe;
+            labelContainer.childNodes[0].innerHTML = classDescribe;
 
         }
     </script>
